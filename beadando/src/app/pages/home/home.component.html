@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title> Üdvözöljük a nagyon csodás időpontfoglaló honlapon!</mat-card-title>
+      <mat-card-subtitle>(opinions may vary)</mat-card-subtitle>
+      <mat-card-content>
+        <p>A rendszer használatához jelentkezzen be, majd foglaljon tetszés szerint egy szabad 
+          időpontot!
+        </p>
+        <span>Felhívjuk szíves figyelmüket arra, hogy a Központi Okmányirodában, vezetői engedély honosítása ügytípusban történő időpontfoglalások esetén csak azon ügyfelek ügyintézésére kerül sor, akinek a nevére az időpontfoglalás történt. Megértésüket köszönjük.</span>
+      </mat-card-content>
+    </mat-card-header>
+  </mat-card>
+  <br>
+  
+  
+   
+    <div class="button-container">
+    @if (!isLoggedIn) {
+      <button mat-flat-button [routerLink]="['/login']">Bejelentkezés</button>
+      <button mat-flat-button [routerLink]="['/signup']">Regisztráció</button>
+      <button mat-flat-button disabled  [routerLink]="['/profile']" >Profilom</button>
+      <button mat-flat-button disabled   (click)="changePage()">Időpontjaim</button>
+    }
+    
+    @if (isLoggedIn) {
+      <button mat-flat-button  [routerLink]="['/profile']" >Profilom</button>
+      <button mat-flat-button  (click)="changePage()">Időpontjaim</button>
+    }
+  </div>
+
+</div>
